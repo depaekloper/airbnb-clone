@@ -126,4 +126,4 @@ dmypy.json
 
 # Mac
 .DS_Store
-.test.json
+test.json
