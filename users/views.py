@@ -1,4 +1,4 @@
-from django.views import View
+import os
 from django.views.generic import FormView
 from django.urls import reverse_lazy
 from django.shortcuts import render, redirect, reverse
@@ -27,6 +27,7 @@ def log_out(request):
 
 
 class SignUpView(FormView):
+
     template_name = "users/signup.html"
     form_class = forms.SighUpForm
     success_url = reverse_lazy("core:home")
@@ -58,3 +59,15 @@ def complete_verification(request, key):
         # to do: add error message
         pass
     return redirect(reverse("core:home"))
+
+
+def github_login(request):
+    client_id = os.environ.get("GH_ID")
+    redirect_uri = "http://127.0.0.1:8000/users/login/github/callback"
+    return redirect(
+        f"https://github.com/login/oauth/authorize?client_id={client_id}&redirect_uri={redirect_uri}&scope=read:user"
+    )
+
+
+def github_callback(request):
+    pass
