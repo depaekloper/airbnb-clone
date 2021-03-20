@@ -27,9 +27,9 @@ class Reservation(core_models.TimeStampedModel):
     STATUS_CANCELED = "canceled"
 
     STATUS_CHOICES = (
-        (STATUS_PENDING, "pending"),
-        (STATUS_CONFIMED, "confirmed"),
-        (STATUS_CANCELED, "canceled"),
+        (STATUS_PENDING, "Pending"),
+        (STATUS_CONFIMED, "Confirmed"),
+        (STATUS_CANCELED, "Canceled"),
     )
 
     status = models.CharField(
