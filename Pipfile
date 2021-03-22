@@ -10,6 +10,7 @@ django-countries = "*"
 django-seed = "*"
 django-dotenv = "*"
 requests = "*"
+sentry-sdk = "==0.13.2"
 
 [dev-packages]
 flake8 = "*"
